@@ -1,3 +1,10 @@
+---
+title: Sancho Changelog
+keywords:
+- ruby
+- github-pages-generator
+...
+
 ## [Unreleased]
 
 TODO

@@ -1,16 +1,13 @@
-require_relative 'sancho'
 require 'erb'
+require_relative 'sancho'
+include Sancho
 
 TEMP = '.tmp'.freeze
-LAYOUT = '_layout'.freeze
+LAYOUT = '_layouts'.freeze
 
 namespace :sancho do
 
-  desc "dummy"
-  task :dummy do
-    puts "Dummy!"
-  end
-
+  desc "docs"
   task :docs do
     site = Sancho::DOCS
     temp = TEMP
@@ -30,13 +27,16 @@ namespace :sancho do
     samples.each {|sample|
       erb = File.read(sample)
       renderer = ERB.new(erb, trim_mode: '%<>')
-      body = rendered.result
-      name = File.basename(sample, '.erb')
+      body = renderer.result
+      name = File.join(site, File.basename(sample, '.erb'))
       File.write(name, body)
     }
 
+    index = docs.pages.find{|page| page.source.downcase =~ /^index/ }
+    docs << Page.new(docs.pages.first.source, 'index.html') unless index
+
     docs.pages.each{|page|
-      include = "-T #{LAYOUT}/layout.html -B #{header} -A #{footer}"
+      include = "--template #{LAYOUT}/layout.html -B #{header} -A #{footer} "
       sh "pandoc -s #{include} -o #{site}/#{page.url} #{page.source}"
     }
   end

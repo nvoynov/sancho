@@ -1,8 +1,8 @@
 ---
-title: Readme
+title: Sancho Readme
 keywords:
 - ruby
-- static-site-generator
+- github-pages-generator
 ...
 
 ## Overview
@@ -17,11 +17,9 @@ It will also create `robots.txt` and `sitemap.xml` files. When you don't need th
 
 ## Installation
 
-Clone sancho repository
-
-```
-git clone https://github.com/nvoynov/sancho.git
-```
+1. Clone sancho repository
+   `git clone https://github.com/nvoynov/sancho.git`
+2. Install [pandoc](https://pandoc.org/installing.html)
 
 ## Usage
 

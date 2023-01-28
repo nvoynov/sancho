@@ -1,3 +1,3 @@
-[ `Punch.(DSL.(&domain))`{.ruby} &nbsp; ~ &nbsp; [Readme](readme.html) &nbsp; ~ &nbsp; [Changelog](changelog.html) &nbsp; ~ &nbsp; [Story](story.html) &nbsp; ~ &nbsp; [Home](https://github.com/nvoynov/punch)]{.smallcaps}
+[ = Sancho Pages Puncher = &nbsp; ~ &nbsp; [Readme](readme.html) &nbsp; ~ &nbsp; [Changelog](changelog.html) &nbsp; ~ &nbsp; [Story](story.html) &nbsp; ~ &nbsp; [Github](https://github.com/nvoynov/sancho)]{.smallcaps}
 
 ***

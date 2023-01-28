@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 require "psych"
+require "date"
 
 # Github Pages site generator
 module Sancho
   extend self
 
   DOCS = 'docs'.freeze
-  CONF = "#{DOCS}.yml".freeze
+  CONF = "sancho.yml".freeze
 
   Config = Struct.new(:domain, :title, :pages)
 
@@ -21,8 +22,12 @@ module Sancho
       @pages = config.pages.map{ Page.new(_1) }
     end
 
+    def <<(page)
+      @pages << page
+    end
+
     def pages_by_date
-      @pages.sort_by{|a, b| b.date <=> a.date}
+      @pages.sort{|a, b| b.date <=> a.date}
     end
   end
 
@@ -31,10 +36,10 @@ module Sancho
     attr_reader :date
     attr_reader :url
 
-    def initialize(source)
+    def initialize(source, url = '')
       @source = source
-      @date = File.mtime(source).date
-      @url = File.basename(source, '.md').downcase + '.html'
+      @date = File.mtime(source).to_date
+      @url = url.empty? ? File.basename(source, '.md').downcase + '.html' : url
     end
   end
 
@@ -45,7 +50,7 @@ module Sancho
   protected
 
   def config
-    conf = Config.new('change.the.domain', %w[README.md CHANGELOG.md]).freeze
+    conf = Config.new('change.the.domain', 'change.the.title', %w[README.md CHANGELOG.md]).freeze
     text = Psych.dump(conf)
     head = text.lines.first
     body = text.lines.drop(1).join
