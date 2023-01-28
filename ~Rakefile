@@ -1,0 +1,27 @@
+require "rake"
+
+Rake.application.options.trace_rules = true
+
+# pandoc -s --toc -c pandoc.css -A footer.html MANUAL.txt -o example3.html
+task :docs do
+  docs, site, temp = %w|docs .site .temp|.map{|dir|
+    makedirs dir unless Dir.exist?(dir)
+    File.expand_path(dir)
+  }
+  header = File.join(temp, '_header.html')
+  footer = File.join(temp, '_footer.html')
+  styles = File.join(docs, 'styles.html')
+
+  sh "pandoc -o #{header} #{docs}/_header.md"
+  sh "pandoc -o #{footer} #{docs}/_footer.md"
+
+  rm_rf "#{site}/*"
+  # cp "#{docs}/pandoc.css", "#{site}/pandoc.css"
+
+  source = %w|README.md CHANGELOG.md STORY.md|
+  fu = proc{|arg| [arg, File.basename(arg, '.md').downcase + '.html']}
+  source.map(&fu).to_h.each{|src, out|
+    include = "-T #{styles} -B #{header} -A #{footer}"
+    sh "pandoc -s #{include} -o #{site}/#{out} #{docs}/#{src}"
+  }
+end
