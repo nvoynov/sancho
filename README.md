@@ -33,3 +33,8 @@ It will also create `robots.txt` and `sitemap.xml` files. When you don't need th
 ### Template
 
 You can provide your own HTML template by placing `_layouts/template.html` file. Read [Pandoc Templates](https://pandoc.org/MANUAL.html#templates) section for details.
+
+## Links
+
+- [Zenweb, stupid fast static website generation](https://www.zenspider.com/projects/zenweb.html)
+- [Creating Static Sites in Ruby with Rack](https://devcenter.heroku.com/articles/static-sites-ruby)
