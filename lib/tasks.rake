@@ -6,6 +6,22 @@ TEMP = '.tmp'.freeze
 LAYOUT = '_layouts'.freeze
 
 namespace :sancho do
+  desc "init"
+  task :init do
+    if Dir.exist?('_layouts')
+      puts "Sancho initialized already"
+      exit(0)
+    end
+    cp_r "#{Sancho.assets}/.", "_layouts"
+    Sancho.config
+    puts <<~EOF
+      Sancho initialized! To create GitHub Pages:
+        1. run 'git checkout -b docs'
+        2. configure site in 'sancho.yml'
+        3. run 'rake sancho:docs'
+        4. commit changes, push 'docs'
+    EOF
+  end
 
   desc "docs"
   task :docs do

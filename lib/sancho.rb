@@ -6,8 +6,24 @@ require "date"
 module Sancho
   extend self
 
+  VERSION = "0.2.0"
+
   DOCS = 'docs'.freeze
   CONF = "sancho.yml".freeze
+
+  def root
+    dir = File.dirname(__dir__)
+    File.expand_path(dir)
+  end
+
+  def assets
+    File.join(root, '_layouts')
+  end
+
+  # Rake.application.rake_require "tasks", [sancho]
+  def tasks
+    ['tasks', [File.join(root, 'tasks.rake')]]
+  end
 
   Config = Struct.new(:domain, :title, :pages)
 
@@ -46,8 +62,6 @@ module Sancho
   def docs
     Site.new(config)
   end
-
-  protected
 
   def config
     conf = Config.new('change.the.domain', 'change.the.title', %w[README.md CHANGELOG.md]).freeze

@@ -1,18 +1,28 @@
+PATH
+  remote: .
+  specs:
+    sancho (0.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
+    minitest (5.17.0)
     rack (3.0.4.1)
     rackup (2.1.0)
       rack (>= 3)
       webrick (~> 1.8)
+    rake (13.0.6)
     webrick (1.8.1)
 
 PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  minitest (~> 5.0)
   rack
   rackup
+  rake (~> 13.0)
+  sancho!
 
 BUNDLED WITH
    2.4.5
