@@ -22,7 +22,7 @@ module Sancho
 
   # Rake.application.rake_require "tasks", [sancho]
   def tasks
-    ['tasks', [File.join(root, 'tasks.rake')]]
+    ['tasks', [File.join(root, 'lib')]]
   end
 
   Config = Struct.new(:domain, :title, :pages)

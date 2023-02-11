@@ -1,5 +1,15 @@
 require "rake"
-Rake.application.rake_require "tasks", ['lib']
-# Rake.application.options.trace_rules = true
+require_relative "lib/sancho"
+source, folders = Sancho.tasks
+Rake.application.rake_require source, folders
 
-task :default => "sancho:docs"
+require "bundler/gem_tasks"
+require "rake/testtask"
+
+Rake::TestTask.new(:test) do |t|
+  t.libs << "test"
+  t.libs << "lib"
+  t.test_files = FileList["test/**/test_*.rb"]
+end
+
+task default: :test
