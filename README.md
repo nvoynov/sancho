@@ -17,9 +17,20 @@ It will also create `robots.txt` and `sitemap.xml` files. When you don't need th
 
 ## Installation
 
-1. Clone sancho repository
-   `git clone https://github.com/nvoynov/sancho.git`
-2. Install [pandoc](https://pandoc.org/installing.html)
+Run
+
+    bundle add marko --git https://github.com/nvoynov/sancho.git
+
+Modify Rakefile adding
+
+```ruby
+require "rake"
+require "sancho"
+source, folders = Sancho.tasks
+Rake.application.rake_require source, folders
+```  
+
+Install [pandoc](https://pandoc.org/installing.html)
 
 ## Usage
 
@@ -27,8 +38,10 @@ It will also create `robots.txt` and `sitemap.xml` files. When you don't need th
 
 1. Commit your repo changes!
 2. Run `$ git checkout docs`
-3. Run `$ rake sancho:generate`
-4. Run `$ git push -u origin docs`
+3. Run `$ rake sancho:init`
+4. Modify `sancho.yml` for pages and `_layouts/header.md` for navbar
+5. Run `$ rake sancho:generate`
+6. Run `$ git push -u origin docs`
 
 ### Template
 

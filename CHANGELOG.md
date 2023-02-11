@@ -9,13 +9,12 @@ keywords:
 
 TODO
 
-- [ ] gem that provides just two gem tasks? 
 - [ ] having template, is there any sense in header, footer?
 - [ ] page collections with own collection layout and index.html
 
-
 ## [0.3.0] - 2023-02-11
 
+- packed as a gem
 - added `sancho:init` rake task
 
 ## [0.2.0] - 2023-01-30
