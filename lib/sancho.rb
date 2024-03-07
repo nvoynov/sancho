@@ -8,7 +8,7 @@ require_relative 'sancho/site'
 module Sancho
   extend self
 
-  VERSION = "0.5.0"
+  VERSION = "0.6.0"
 
   DOCS = 'docs'.freeze
 
