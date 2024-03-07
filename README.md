@@ -1,25 +1,23 @@
 ---
 title: Sancho Readme
 keywords:
-- ruby
-- github-pages-generator
+  - ruby
+  - github-pages-generator
 ...
 
 ## Overview
 
-`Sancho` is Github Pages generator for Github Repositories or private pages. It supposed that your site will be placed in `docs` directory, under `docs` git branch.
+`Sancho` is static site generator for Github Pages. It supposed that your site will be placed in `docs` directory, under `docs` git branch.
 
 For rendering HTML `Sancho` utilizes [Pandoc](https://pandoc.org), and it is supposed that your site pages will be written in Markdown or [Pandoc Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown).
 
-By default configuration (`sancho.yml`) your site will consists of just two files `README.md` and `CHANGELOG.md`.
-
-It will also create `robots.txt` and `sitemap.xml` files. When you don't need them - just remove `*.erb` inside `_layouts` directory.
+By default configuration (`sancho.yml`) your site will consists of two files `README.md` and `CHANGELOG.md`. It will also create `robots.txt` and `sitemap.xml` files. When you don't need them - just remove `*.erb` inside `_layouts` directory.
 
 ## Installation
 
 Run
 
-    bundle add marko --git https://github.com/nvoynov/sancho.git
+    bundle add sancho --git https://github.com/nvoynov/sancho.git
 
 Modify Rakefile adding
 
@@ -28,7 +26,7 @@ require "rake"
 require "sancho"
 source, folders = Sancho.tasks
 Rake.application.rake_require source, folders
-```  
+```
 
 Install [pandoc](https://pandoc.org/installing.html)
 

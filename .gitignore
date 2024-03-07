@@ -7,6 +7,5 @@
 /spec/reports/
 /tmp/
 /_sites/
-/lib/sandbox/
-/.tmp/
-~*
+.DS_Store
+*~

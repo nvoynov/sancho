@@ -1,16 +1,25 @@
 ---
 title: Sancho Changelog
 keywords:
-- ruby
-- github-pages-generator
+  - static-site-generator
+  - github-pages-generator
+  - ruby
 ...
+
+## [TODO]
+
+- [ ] fix config.ru for serving locally
+- [ ] having template, is there any sense in header, footer?
+- [ ] page collections with own collection layout and index.html
 
 ## [Unreleased]
 
-TODO
+## [0.4.0] - 2024-03-07
 
-- [ ] having template, is there any sense in header, footer?
-- [ ] page collections with own collection layout and index.html
+- designed new model based on Data.define
+- designed tests for Rake tasks
+- improved `sancho:init` output
+- improved `sancho:docs` using Dir.mktempdir
 
 ## [0.3.0] - 2023-02-11
 
