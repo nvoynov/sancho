@@ -78,4 +78,15 @@ namespace :sancho do
     sh "rackup #{ru}"
   end
 
+  desc "release.."
+  task :release do
+    sh 'git checkout docs'
+    sh 'git merge master'
+    Rake::Task['sancho:docs'].execute
+    sh 'git add .'
+    sh 'git commit -m "sancho:docs"'
+    sh 'git push'
+    sh 'git checkout master'
+  end
+
 end

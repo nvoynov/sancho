@@ -14,14 +14,11 @@ keywords:
 
 ## [Unreleased]
 
-## [0.5.0] - 2024-03-07
-
-- designed `sancho:serve` command
-
-## [0.4.0] - 2024-03-07
+## [0.6.0] - 2024-03-07
 
 - designed new model based on Data.define
-- designed tests for Rake tasks
+- designed tests for tasks.rake
+- designed new `sancho:serve` and `sancho:release` tasks
 - improved `sancho:init` output
 - improved `sancho:docs` using Dir.mktempdir
 
