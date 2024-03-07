@@ -8,7 +8,7 @@ require_relative 'sancho/site'
 module Sancho
   extend self
 
-  VERSION = "0.4.0"
+  VERSION = "0.5.0"
 
   DOCS = 'docs'.freeze
 
@@ -25,9 +25,13 @@ module Sancho
     Site.new(**Conf.read.to_h)
   end
 
+  def lib
+    File.join(root, 'lib')
+  end
+
   # Rake.application.rake_require "tasks", [sancho]
   def tasks
-    ['tasks', [File.join(root, 'lib')]]
+    ['tasks', [lib]]
   end
 
 end

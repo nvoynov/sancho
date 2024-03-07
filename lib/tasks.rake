@@ -3,7 +3,6 @@ require 'tmpdir'
 require_relative 'sancho'
 include Sancho
 
-TEMP = '.tmp'.freeze
 LAYOUT = '_layouts'.freeze
 
 namespace :sancho do
@@ -71,7 +70,12 @@ namespace :sancho do
     ensure
       remove_entry tmpdir
     end
+  end
 
+  desc "serve"
+  task :serve do
+    ru = File.join(Sancho.lib, 'config.ru')
+    sh "rackup #{ru}"
   end
 
 end

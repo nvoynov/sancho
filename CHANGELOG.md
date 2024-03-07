@@ -8,11 +8,15 @@ keywords:
 
 ## [TODO]
 
-- [ ] fix config.ru for serving locally
+- [ ] fix config.ru for serving locally; provide it for clients
 - [ ] having template, is there any sense in header, footer?
 - [ ] page collections with own collection layout and index.html
 
 ## [Unreleased]
+
+## [0.5.0] - 2024-03-07
+
+- designed `sancho:serve` command
 
 ## [0.4.0] - 2024-03-07
 

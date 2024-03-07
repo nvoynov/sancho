@@ -6,6 +6,7 @@ module Sancho
   class Site < Data.define(:domain, :title, :pages)
     extend Forwardable
     def_delegator :pages, :each, :each_page
+
     def initialize(domain:, title:, pages:)
       pages = pages.map{|e| Page.new(e) }
       super
