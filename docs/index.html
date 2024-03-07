@@ -115,23 +115,22 @@ href="https://github.com/nvoynov/sancho">Github</a></span>
 </ul>
 </nav>
 <h2 id="overview">Overview</h2>
-<p><code>Sancho</code> is Github Pages generator for Github Repositories
-or private pages. It supposed that your site will be placed in
-<code>docs</code> directory, under <code>docs</code> git branch.</p>
+<p><code>Sancho</code> is static site generator for Github Pages. It
+supposed that your site will be placed in <code>docs</code> directory,
+under <code>docs</code> git branch.</p>
 <p>For rendering HTML <code>Sancho</code> utilizes <a
 href="https://pandoc.org">Pandoc</a>, and it is supposed that your site
 pages will be written in Markdown or <a
 href="https://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc
 Markdown</a>.</p>
 <p>By default configuration (<code>sancho.yml</code>) your site will
-consists of just two files <code>README.md</code> and
-<code>CHANGELOG.md</code>.</p>
-<p>It will also create <code>robots.txt</code> and
-<code>sitemap.xml</code> files. When you don’t need them - just remove
-<code>*.erb</code> inside <code>_layouts</code> directory.</p>
+consists of two files <code>README.md</code> and
+<code>CHANGELOG.md</code>. It will also create <code>robots.txt</code>
+and <code>sitemap.xml</code> files. When you don’t need them - just
+remove <code>*.erb</code> inside <code>_layouts</code> directory.</p>
 <h2 id="installation">Installation</h2>
 <p>Run</p>
-<pre><code>bundle add marko --git https://github.com/nvoynov/sancho.git</code></pre>
+<pre><code>bundle add sancho --git https://github.com/nvoynov/sancho.git</code></pre>
 <p>Modify Rakefile adding</p>
 <div class="sourceCode" id="cb2"><pre
 class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span> <span class="st">&quot;rake&quot;</span></span>
