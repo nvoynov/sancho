@@ -17,6 +17,7 @@ GEM
 PLATFORMS
   arm64-darwin-23
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   minitest (~> 5.22)
