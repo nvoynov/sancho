@@ -8,13 +8,12 @@ keywords:
 
 ## [TODO]
 
-- [ ] fix config.ru for serving locally; provide it for clients
 - [ ] having template, is there any sense in header, footer?
 - [ ] page collections with own collection layout and index.html
 
 ## [Unreleased]
 
-## [0.6.0] - 2024-03-07
+## [0.6.1] - 2024-03-08
 
 - designed new model based on Data.define
 - designed tests for tasks.rake

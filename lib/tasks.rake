@@ -73,7 +73,7 @@ namespace :sancho do
   end
 
   desc "serve"
-  task :serve do
+  task serve: [:docs] do
     ru = File.join(Sancho.lib, 'config.ru')
     sh "rackup #{ru}"
   end

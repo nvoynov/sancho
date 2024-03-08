@@ -1,6 +1,6 @@
 # https://devcenter.heroku.com/articles/static-sites-ruby
 require 'rack/static'
-require './lib/sancho'
+require 'sancho'
 
 use Rack::Static,
   :urls => ["/images", "/js", "/css"],

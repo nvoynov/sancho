@@ -12,11 +12,8 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
+    ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
@@ -24,7 +21,7 @@
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -35,7 +32,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -106,50 +103,42 @@ href="https://github.com/nvoynov/sancho">Github</a></span>
 <ul>
 <li><a href="#overview" id="toc-overview">Overview</a></li>
 <li><a href="#installation" id="toc-installation">Installation</a></li>
-<li><a href="#usage" id="toc-usage">Usage</a>
-<ul>
-<li><a href="#basics" id="toc-basics">Basics</a></li>
-<li><a href="#template" id="toc-template">Template</a></li>
-</ul></li>
+<li><a href="#usage" id="toc-usage">Usage</a></li>
 <li><a href="#links" id="toc-links">Links</a></li>
 </ul>
 </nav>
 <h2 id="overview">Overview</h2>
-<p><code>Sancho</code> is static site generator for Github Pages. It
-supposed that your site will be placed in <code>docs</code> directory,
-under <code>docs</code> git branch.</p>
+<p><code>Sancho</code> is static site generator for <a
+href="https://pages.github.com/">Github Pages</a> that proposes placing
+your site content under <code>docs</code> directory in a separate git
+branch branch.</p>
 <p>For rendering HTML <code>Sancho</code> utilizes <a
 href="https://pandoc.org">Pandoc</a>, and it is supposed that your site
 pages will be written in Markdown or <a
 href="https://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc
 Markdown</a>.</p>
-<p>By default configuration (<code>sancho.yml</code>) your site will
-consists of two files <code>README.md</code> and
-<code>CHANGELOG.md</code>. It will also create <code>robots.txt</code>
-and <code>sitemap.xml</code> files. When you don’t need them - just
-remove <code>*.erb</code> inside <code>_layouts</code> directory.</p>
 <h2 id="installation">Installation</h2>
 <p>Run</p>
 <pre><code>bundle add sancho --git https://github.com/nvoynov/sancho.git</code></pre>
-<p>Modify Rakefile adding</p>
+<p>Require Sancho in Rakefile</p>
 <div class="sourceCode" id="cb2"><pre
-class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span> <span class="st">&quot;rake&quot;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span> <span class="st">&quot;sancho&quot;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>source, folders <span class="kw">=</span> <span class="dt">Sancho</span><span class="at">.tasks</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">Rake</span><span class="at">.application.rake_require</span> source, folders</span></code></pre></div>
+class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span> <span class="st">&quot;sancho&quot;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>source, folders <span class="kw">=</span> <span class="dt">Sancho</span><span class="at">.tasks</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">Rake</span><span class="at">.application.rake_require</span> source, folders</span></code></pre></div>
 <p>Install <a href="https://pandoc.org/installing.html">pandoc</a></p>
 <h2 id="usage">Usage</h2>
-<h3 id="basics">Basics</h3>
+<p><u>Basic flow</u></p>
 <ol type="1">
 <li>Commit your repo changes!</li>
 <li>Run <code>$ git checkout docs</code></li>
 <li>Run <code>$ rake sancho:init</code></li>
-<li>Modify <code>sancho.yml</code> for pages and
+<li>Customize <code>sancho.yml</code> for pages and
 <code>_layouts/header.md</code> for navbar</li>
-<li>Run <code>$ rake sancho:generate</code></li>
+<li>Run <code>$ rake sancho:generate</code> to create your site</li>
+<li>Run <code>$ rake sancho:serve</code> to run the site locally</li>
 <li>Run <code>$ git push -u origin docs</code></li>
 </ol>
-<h3 id="template">Template</h3>
+<p><u>Template</u></p>
 <p>You can provide your own HTML template by placing
 <code>_layouts/template.html</code> file. Read <a
 href="https://pandoc.org/MANUAL.html#templates">Pandoc Templates</a>

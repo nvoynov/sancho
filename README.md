@@ -29,7 +29,7 @@ Install [pandoc](https://pandoc.org/installing.html)
 
 ## Usage
 
-[Basic flow]{.underline}
+[First flow]{.underline}
 
 1. Commit your repo changes!
 2. Run `$ git checkout docs`
@@ -38,6 +38,13 @@ Install [pandoc](https://pandoc.org/installing.html)
 5. Run `$ rake sancho:generate` to create your site
 6. Run `$ rake sancho:serve` to run the site locally
 7. Run `$ git push -u origin docs`
+
+
+Having done first flow once, one can use the simplified one:
+
+1. Make changes in your markdown files and maybe the site configuration
+2. Check it visually by running `$ rake sancho:serve`
+3. Run `$ rake sancho:release` to get done checkout, merging, and pushing
 
 [Template]{.underline}
 

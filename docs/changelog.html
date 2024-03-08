@@ -12,11 +12,8 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
+    ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
@@ -42,43 +39,52 @@ href="https://github.com/nvoynov/sancho">Github</a></span>
 <ul>
 <li><a href="#todo" id="toc-todo">[TODO]</a></li>
 <li><a href="#unreleased" id="toc-unreleased">[Unreleased]</a></li>
-<li><a href="#section" id="toc-section">[0.4.0] - 2024-03-07</a></li>
-<li><a href="#section-1" id="toc-section-1">[0.3.0] -
+<li><a href="#section" id="toc-section">[0.6.0] - 2024-03-08</a></li>
+<li><a href="#section-1" id="toc-section-1">[0.6.0] -
+2024-03-07</a></li>
+<li><a href="#section-2" id="toc-section-2">[0.3.0] -
 2023-02-11</a></li>
-<li><a href="#section-2" id="toc-section-2">[0.2.0] -
+<li><a href="#section-3" id="toc-section-3">[0.2.0] -
 2023-01-30</a></li>
-<li><a href="#section-3" id="toc-section-3">[0.1.0] -
+<li><a href="#section-4" id="toc-section-4">[0.1.0] -
 2023-01-28</a></li>
 </ul>
 </nav>
 <h2 id="todo">[TODO]</h2>
 <ul class="task-list">
-<li><label><input type="checkbox" />fix config.ru for serving
-locally</label></li>
-<li><label><input type="checkbox" />having template, is there any sense
-in header, footer?</label></li>
-<li><label><input type="checkbox" />page collections with own collection
-layout and index.html</label></li>
+<li><input type="checkbox" />fix config.ru for serving locally; provide
+it for clients</li>
+<li><input type="checkbox" />having template, is there any sense in
+header, footer?</li>
+<li><input type="checkbox" />page collections with own collection layout
+and index.html</li>
 </ul>
 <h2 id="unreleased">[Unreleased]</h2>
-<h2 id="section">[0.4.0] - 2024-03-07</h2>
+<h2 id="section">[0.6.0] - 2024-03-08</h2>
+<ul>
+<li>fixed config.ru</li>
+<li><code>serve</code> task depends on <code>docs</code></li>
+</ul>
+<h2 id="section-1">[0.6.0] - 2024-03-07</h2>
 <ul>
 <li>designed new model based on Data.define</li>
-<li>designed tests for Rake tasks</li>
+<li>designed tests for tasks.rake</li>
+<li>designed new <code>sancho:serve</code> and
+<code>sancho:release</code> tasks</li>
 <li>improved <code>sancho:init</code> output</li>
 <li>improved <code>sancho:docs</code> using Dir.mktempdir</li>
 </ul>
-<h2 id="section-1">[0.3.0] - 2023-02-11</h2>
+<h2 id="section-2">[0.3.0] - 2023-02-11</h2>
 <ul>
 <li>packed as a gem</li>
 <li>added <code>sancho:init</code> rake task</li>
 </ul>
-<h2 id="section-2">[0.2.0] - 2023-01-30</h2>
+<h2 id="section-3">[0.2.0] - 2023-01-30</h2>
 <ul>
 <li>added styles (pandoc.css with sticky navbar and changed code)</li>
 <li>added rackup</li>
 </ul>
-<h2 id="section-3">[0.1.0] - 2023-01-28</h2>
+<h2 id="section-4">[0.1.0] - 2023-01-28</h2>
 <ul>
 <li>Project released</li>
 </ul>
