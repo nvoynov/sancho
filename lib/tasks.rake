@@ -25,11 +25,10 @@ namespace :sancho do
 
       Sancho initialized!
 
-      To create GitHub Pages:
-        1. run 'git checkout -b docs'
-        2. configure in 'sancho.yml'
-        3. run 'rake sancho:docs'
-        4. commit changes, push 'docs'
+      To create Site Pages:
+        $ rake sancho:init
+        $ rake sancho:docs
+        $ rake sancho:serve
     EOF
   end
 
@@ -76,17 +75,6 @@ namespace :sancho do
   task serve: [:docs] do
     ru = File.join(Sancho.lib, 'config.ru')
     sh "rackup #{ru}"
-  end
-
-  desc "release.."
-  task :release do
-    sh 'git checkout docs'
-    sh 'git merge master'
-    Rake::Task['sancho:docs'].execute
-    sh 'git add .'
-    sh 'git commit -m "sancho:docs"'
-    sh 'git push'
-    sh 'git checkout master'
   end
 
 end
