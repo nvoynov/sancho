@@ -8,25 +8,10 @@ keywords:
 
 ## [Unreleased]
 
-__TODO__
 
-- [ ] add progress copying assets and generated HTML files
+## [0.7.1] - 2025-08-26
 
-```ruby
-pattern = File.join(Sancho::LAYOUTS_DIR, '*.*')
-puts "Sancho assets copied"
-Dir[pattern]
-  .map{ "  - #{it}"}
-  .join(?\n)
-
-conf = Task::ReadConfig.run
-pattern = File.join(conf.directory, '*.html')
-puts "Sancho site generated"
-Dir[pattern]
-  .map{ "  - #{it}"}
-  .join(?\n)
-```
-
+- added progress information
 
 ## [0.7.0] - 2025-08-24
 
