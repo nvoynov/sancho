@@ -12,6 +12,22 @@ __TODO__
 
 - [ ] add progress copying assets and generated HTML files
 
+```ruby
+pattern = File.join(Sancho::LAYOUTS_DIR, '*.*')
+puts "Sancho assets copied"
+Dir[pattern]
+  .map{ "  - #{it}"}
+  .join(?\n)
+
+conf = Task::ReadConfig.run
+pattern = File.join(conf.directory, '*.html')
+puts "Sancho site generated"
+Dir[pattern]
+  .map{ "  - #{it}"}
+  .join(?\n)
+```
+
+
 ## [0.7.0] - 2025-08-24
 
 - designed CLI interface of init, build, serve commands
