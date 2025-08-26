@@ -1,6 +1,6 @@
 # https://devcenter.heroku.com/articles/static-sites-ruby
 require 'rack/static'
-require './lib/sancho'
+require_relative 'read_config'
 
 use Rack::Static,
   :urls => ["/images", "/js", "/css"],
@@ -12,9 +12,10 @@ text_html = {
   'cache-control' => 'public, max-age=86400'
 }
 
+config = Sancho::Task::ReadConfig.run 
 run lambda {|env|
   target = env['REQUEST_PATH'][1..-1]
-  source = File.join(Sancho::DOCS, target)
+  source = File.join(config.directory, target)
   return [404, text_plain, ['not found']] \
     unless File.exist?(source)
   [200, text_html, File.open(source, File::RDONLY)]

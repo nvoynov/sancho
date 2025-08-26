@@ -4,14 +4,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc><%= @site.domain %>/</loc>
-    <lastmod><%= @site.pages_by_date.first.date %></lastmod>
+    <loc><%= site.domain %>/</loc>
+    <lastmod><%= site.pages_by_date.first.date %></lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-<% @site.pages.each do |page| %>
+<% site.pages.each do |page| %>
   <url>
-    <loc><%= @site.domain %>/<%= page.url %></loc>
+    <loc><%= site.domain %>/<%= page.url %></loc>
     <lastmod><%= page.date %></lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

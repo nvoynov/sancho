@@ -6,13 +6,13 @@ keywords:
   - ruby
 ...
 
-## [TODO]
-
-- [ ] fix config.ru for serving locally; provide it for clients
-- [ ] having template, is there any sense in header, footer?
-- [ ] page collections with own collection layout and index.html
-
 ## [Unreleased]
+
+## [0.7.0] - 2025-08-24
+
+- designed CLI interface of init, build, serve commands
+- removed Rake interface (that was dependency disaster)
+- Ruby 3.4
 
 ## [0.6.0] - 2024-03-07
 

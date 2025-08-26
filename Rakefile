@@ -1,8 +1,3 @@
-require "rake"
-require_relative "lib/sancho"
-source, folders = Sancho.tasks
-Rake.application.rake_require source, folders
-
 require "bundler/gem_tasks"
 require "rake/testtask"
 

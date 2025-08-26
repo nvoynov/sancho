@@ -1,0 +1,7 @@
+---
+directory: docs
+domain: domain
+title: Sancho
+pages:
+- README.md
+- CHANGELOG.md

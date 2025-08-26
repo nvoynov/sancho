@@ -7,9 +7,11 @@ keywords:
 
 ## Overview
 
-`Sancho` is static site generator for [Github Pages](https://pages.github.com/) that proposes placing your site content under `docs` directory in a separate git branch branch.
+Sancho plays [Github Pages](https://pages.github.com/) generator designed for simplest site generation from a few markdown files.
 
-For rendering HTML `Sancho` utilizes [Pandoc](https://pandoc.org), and it is supposed that your site pages will be written in Markdown or [Pandoc Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown).
+In my scenario, I always have README.md and CHANGELOG.md, sometimes STORY.md for every project and present thothe on the project page.
+
+It utilizes [Pandoc](https://pandoc.org) for Markdown to HTML translation; source markdonw could be [Pandoc Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown).
 
 ## Installation
 
@@ -17,31 +19,25 @@ Run
 
     bundle add sancho --git https://github.com/nvoynov/sancho.git
 
-Require Sancho in Rakefile
-
-```ruby
-require "sancho"
-source, folders = Sancho.tasks
-Rake.application.rake_require source, folders
-```
-
 Install [pandoc](https://pandoc.org/installing.html)
 
 ## Usage
 
 [Basic flow]{.underline}
 
-1. Commit your repo changes!
-2. Run `$ git checkout docs`
-3. Run `$ rake sancho:init`
-4. Customize `sancho.yml` for pages and `_layouts/header.md` for navbar
-5. Run `$ rake sancho:generate` to create your site
-6. Run `$ rake sancho:serve` to run the site locally
-7. Run `$ git push -u origin docs`
+    # go to tareget directory
+    cd my_thing
+    # create .sancho.yml configuration file and copy basis site assets
+    sancho init
+    # do some configuration and template changes
+    # then build the site
+    sancho build
+    # test the site
+    sancho serve
 
 [Template]{.underline}
 
-You can provide your own HTML template by placing `_layouts/template.html` file. Read [Pandoc Templates](https://pandoc.org/MANUAL.html#templates) section for details.
+To change template just place your `_layouts/template.html` file. Read [Pandoc Templates](https://pandoc.org/MANUAL.html#templates) section for details.
 
 ## Links
 
