@@ -11,7 +11,7 @@ module Sancho
         return if Dir.exist?(dir)
 
         mkdir_p dir
-        cp_r "#{Sancho.assets}/.", dir, verbose: true
+        cp_r "#{Sancho.assets}/.", dir
       end
     end
     
