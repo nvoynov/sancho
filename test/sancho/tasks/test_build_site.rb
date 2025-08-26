@@ -11,13 +11,12 @@ describe Task::BuildSite do
         File.write('CHANGELOG.md', '% CHANGELOG')
         
         config = Task::ReadConfig.run
-        Task::CopyAssets.run(Dir.pwd)
+        Task::CopyAssets.run
         Task::BuildSite.run(config)
 
         content = %w[index.html readme.html changelog.html robots.txt sitemap.xml]
         content.each{ assert File.exist?(File.join(config.directory, it)) }
       }      
-      # puts out
       # puts Dir['**/*.*']
     }
   end

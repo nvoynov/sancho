@@ -9,13 +9,17 @@ keywords:
 
 Sancho plays [Github Pages](https://pages.github.com/) generator designed for simplest site generation from a few markdown files.
 
-In my scenario, I always have README.md and CHANGELOG.md, sometimes STORY.md for every project and present thothe on the project page.
+In my scenario, I always have README.md and CHANGELOG.md, sometimes STORY.md for every project and present those on the project page.
 
 It utilizes [Pandoc](https://pandoc.org) for Markdown to HTML translation; source markdonw could be [Pandoc Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown).
 
 ## Installation
 
-Run
+Install the gem
+
+    gem install sancho
+
+Or add it by
 
     bundle add sancho --git https://github.com/nvoynov/sancho.git
 

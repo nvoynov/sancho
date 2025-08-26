@@ -24,8 +24,8 @@ module Sancho
     end
 
     def init
-      conf = Task::ReadConfig.run      
-      Task::CopyAssets.run(conf.directory)
+      Task::ReadConfig.run      
+      Task::CopyAssets.run
     end
 
     def build

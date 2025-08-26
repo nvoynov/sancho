@@ -7,7 +7,7 @@ describe Task::CopyAssets do
   it '#run' do
     Tempbox.call {
       capture_io {
-        subject.run(Dir.pwd)
+        subject.run
         assert Dir.exist?(Sancho::LAYOUTS_DIR)
         refute Dir.empty?(Sancho::LAYOUTS_DIR)
       }      

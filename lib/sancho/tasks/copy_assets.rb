@@ -6,8 +6,8 @@ module Sancho
     # Copy Sancho assets
     class CopyAssets < Basic
       # @param dest [String] directory to punch
-      def self.run(dest)
-        dir = File.join(dest, Sancho::LAYOUTS_DIR)
+      def self.run
+        dir = Sancho::LAYOUTS_DIR
         return if Dir.exist?(dir)
 
         mkdir_p dir
