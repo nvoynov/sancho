@@ -10,6 +10,7 @@ module Sancho
         dir = File.join(dest, Sancho::LAYOUTS_DIR)
         return if Dir.exist?(dir)
 
+        mkdir_p dir
         cp_r "#{Sancho.assets}/.", dir
       end
     end
