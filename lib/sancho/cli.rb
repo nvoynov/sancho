@@ -27,7 +27,7 @@ module Sancho
       Task::ReadConfig.run      
       Task::CopyAssets.run
       ptrn = File.join(Sancho::LAYOUTS_DIR, '**/*.*')
-      copied = Dir[ptrn].map{ "  - #{it}" }
+      copied = Dir[ptrn].map{ "  #{it}" }
       puts 'Sancho site assets copied', copied
     end
 
@@ -35,7 +35,7 @@ module Sancho
       conf = Task::ReadConfig.run
       Task::BuildSite.run(conf)
       ptrn = File.join(conf.directory, '*.html')
-      generated = Dir[ptrn].map{ "  - #{it}" }
+      generated = Dir[ptrn].map{ "  #{it}" }
       puts 'Sancho HTML generated', generated
     end
 
