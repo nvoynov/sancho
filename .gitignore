@@ -1,6 +1,7 @@
 .gitingore
 **/*~
 *.log
+pkg
 .local_store
 .DS_Store
 

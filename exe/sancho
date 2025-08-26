@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
-require './lib/sancho'
+require 'bundler/setup'
+require 'sancho'
 
 Sancho::CLI.call(ARGV)
