@@ -8,6 +8,10 @@ keywords:
 
 ## [Unreleased]
 
+__TODO__
+
+- [ ] add progress copying assets and generated HTML files
+
 ## [0.7.0] - 2025-08-24
 
 - designed CLI interface of init, build, serve commands
